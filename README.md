@@ -57,7 +57,6 @@ In-Memory Data Store
 ```
 
 /PublicacionesApp
-│
 ├── App.xaml                     # Global resources & converters
 ├── MauiProgram.cs               # App startup, fonts & DI registrations
 │
@@ -90,11 +89,12 @@ In-Memory Data Store
 │   └── DeletePublicationPage.xaml
 │
 └── Resources/
-├── Styles/Styles.xaml        # Color palette & styles
-├── Converters/               # IValueConverters
-└── Fonts/Orbitron-Regular.ttf
+    ├── Styles/Styles.xaml        # Color palette & styles
+    ├── Converters/               # IValueConverters
+    └── Fonts/Orbitron-Regular.ttf
 
-````
+
+```
 
 ---
 
