@@ -1,9 +1,6 @@
-<!--
-  🚀 PublicacionesApp – Technical README
-  ======================================
-  A modern, technical overview of the .NET MAUI MVVM sample app
--->
+Here’s the complete **README.md** in plain Markdown—no rendering errors—ready to copy into your repository:
 
+```markdown
 # 🚀 PublicacionesApp
 
 ![.NET MAUI 8.0](https://img.shields.io/badge/.NET_MAUI-8.0-blue?style=flat-square) ![C#](https://img.shields.io/badge/C%23-9B4F96?style=flat-square) ![MIT License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
@@ -14,16 +11,16 @@
 
 ## 📐 Table of Contents
 
-1. [🎯 Objective](#-objective)
-2. [🧩 Architecture](#-architecture)
-3. [📂 Project Structure](#-project-structure)
-4. [⚙️ Prerequisites](#️-prerequisites)
-5. [🚀 Getting Started](#-getting-started)
-6. [📈 Usage Flows](#-usage-flows)
-7. [🛠️ Customization & Styling](#️-customization--styling)
-8. [🤝 Contributing](#-contributing)
-9. [📄 License](#-license)
-10. [✍️ Author](#️-author)
+1. 🎯 Objective  
+2. 🧩 Architecture  
+3. 📂 Project Structure  
+4. ⚙️ Prerequisites  
+5. 🚀 Getting Started  
+6. 📈 Usage Flows  
+7. 🛠️ Customization & Styling  
+8. 🤝 Contributing  
+9. 📄 License  
+10. ✍️ Author  
 
 ---
 
@@ -31,36 +28,34 @@
 
 Provide a fully functional **CRUD** app for academic publications, demonstrating:
 
-* **MVVM** pattern
-* **Shell** navigation
-* In-memory **Service** layer
-* Custom **Styles** & **Converters**
-* Cross-platform UI (Windows, Android, iOS)
+- **MVVM** pattern  
+- **Shell** navigation  
+- In-memory **Service** layer  
+- Custom **Styles** & **Converters**  
+- Cross-platform UI (Windows, Android, iOS)  
 
 ---
 
 ## 🧩 Architecture
 
-```mermaid
-flowchart LR
-    A[Views (XAML + Code-Behind)] -->|binds to| B(ViewModels)
-    B -->|calls| C[IPublicationService]
-    C -->|manipulates| D[(In-Memory Data Store)]
-    D --> C
-    C -->|returns| B
-    B -->|updates| A
 ```
 
-* **Views**: `*.xaml` + code-behind
-* **ViewModels**: inherit `BaseViewModel` (INotifyPropertyChanged, Title, IsBusy)
-* **Service**: `IPublicationService` + `PublicationService` singleton
-* **Models**: `Publication`, `PublicationType`, `PublicationStatus`
+Views (XAML + code-behind)
+↓ binds to
+ViewModels (BaseViewModel → specific logic)
+↓ calls
+IPublicationService → PublicationService (singleton)
+↓ manipulates
+In-Memory Data Store
+
+```
 
 ---
 
 ## 📂 Project Structure
 
 ```
+
 /PublicacionesApp
 │
 ├── App.xaml                     # Global resources & converters
@@ -95,19 +90,20 @@ flowchart LR
 │   └── DeletePublicationPage.xaml
 │
 └── Resources/
-    ├── Styles/Styles.xaml        # Color palette & control styles
-    ├── Converters/               # IValueConverters (InverseBool, StringNotNullOrEmpty, NotNullToBool)
-    └── Fonts/Orbitron-Regular.ttf
-```
+├── Styles/Styles.xaml        # Color palette & styles
+├── Converters/               # IValueConverters
+└── Fonts/Orbitron-Regular.ttf
+
+````
 
 ---
 
 ## ⚙️ Prerequisites
 
-* **Windows 11 / macOS / Linux**
-* **.NET 8.0 SDK**
-* **Visual Studio 2022 Community** v17.14.5 with **.NET MAUI** workload
-* (Optional) Android Emulator or physical device
+- **Windows 11 / macOS / Linux**  
+- **.NET 8.0 SDK**  
+- **Visual Studio 2022 Community** v17.14.5 with **.NET MAUI** workload  
+- (Optional) Android Emulator or physical device  
 
 ---
 
@@ -117,13 +113,13 @@ flowchart LR
 # 1. Clone the repo
 git clone https://github.com/almarar10/PublicacionesApp.git
 
-# 2. Navigate into project
+# 2. Enter folder
 cd PublicacionesApp
 
 # 3. Open in Visual Studio 2022
 #    - Select "Windows Machine" or an Android emulator
 #    - Press F5 to build and run
-```
+````
 
 ---
 
@@ -131,46 +127,46 @@ cd PublicacionesApp
 
 1. **List Publications**
 
-   * Displays cards with Title, Type, Status.
-   * Tap a card → ✨ Prompt "View details?" → Yes → Navigate to detail view.
+   * Shows cards with Title, Type, Status.
+   * Tap a card, confirm “View details?”, then see full info.
 
 2. **Create Publication**
 
    * Fill ID, Title, Date, Type, Status, Authors.
-   * Press “Save” → Publication added in-memory.
+   * Tap **Save** → new item appears in list.
 
 3. **Replace Author**
 
-   * Select a publication from picker.
-   * Enter new author name → Press “Replace” → Old authors cleared + new author added.
+   * Pick a publication, enter new author name.
+   * Tap **Replace** → old authors cleared, new author set.
 
 4. **Filter by Type**
 
-   * Choose a type from dropdown → Press “Filter” → List shows matching items.
+   * Choose a type, tap **Filter** → list filtered.
 
 5. **Search by Author**
 
-   * Enter author name → Press “Search” → List shows publications containing that author.
+   * Enter author name, tap **Search** → show matching items.
 
 6. **Change Status**
 
-   * Search by ID or Title → Select new status from dropdown → Press “Update”.
+   * Search by ID or Title, pick new status, tap **Update**.
 
 7. **Delete Publication**
 
-   * Enter Title → Press “Search” → Confirm deletion → Publication removed.
+   * Search by Title, tap **Delete**, confirm → item removed.
 
 ---
 
 ## 🛠️ Customization & Styling
 
-* **Fonts**: `Orbitron` for a distinctive “metallic orange” look
+* **Fonts**: `Orbitron` for a metallic-orange look
 * **Colors**:
 
   * Background: `#1E1E1E`
-  * Accent (orange): `#FF8C00`
-* **Styles**: centralized in `Resources/Styles/Styles.xaml`
-* **Converters**: reusable IValueConverters in `Resources/Converters`
+  * Accent: `#FF8C00`
+* **Styles**: in `Resources/Styles/Styles.xaml`
+* **Converters**: in `Resources/Converters`
 
 ---
 
@@ -180,36 +176,21 @@ cd PublicacionesApp
 2. Create a feature branch:
 
    ```bash
-   git checkout -b feature/awesome-feature
+   git checkout -b feature/awesome
    ```
 3. Commit your changes:
 
    ```bash
    git commit -m "Add awesome feature"
    ```
-4. Push to GitHub:
-
-   ```bash
-   git push origin feature/awesome-feature
-   ```
-5. Open a Pull Request
+4. Push and open a PR
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**:
-
-```
-MIT License
-
-Copyright (c) 2025 almarar10
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files...
-... (rest of the MIT text)
-...
-```
+This project is licensed under the **MIT License**.
+See [LICENSE](LICENSE) for full text.
 
 ---
 
@@ -218,8 +199,11 @@ of this software and associated documentation files...
 **almarar10**
 
 * GitHub: [@almarar10](https://github.com/almarar10)
-* Email: [your.email@example.com](mailto:your.email@example.com)
+* Email: [aramoscurto@gmail.com](mailto:your.email@example.com)
 
 ---
 
 👩‍💻 **Happy coding!**
+
+```
+```
