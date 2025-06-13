@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="PublicacionesApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:PublicacionesApp.Views">
+
+    <ShellContent
+        Title="Listado"
+        Icon="list.png"
+        ContentTemplate="{DataTemplate views:PublicationsListPage}"
+        Route="publicationsList" />
+
+    <ShellContent
+    Title="Nueva publicación"
+    Icon="add.png"
+    ContentTemplate="{DataTemplate views:AddPublicationPage}"
+    Route="addPublication" />
+
+    <ShellContent
+    Title="Añadir autor"
+    Icon="author_add.png"
+    ContentTemplate="{DataTemplate views:AddAuthorPage}"
+    Route="addAuthor" />
+
+    <ShellContent
+    Title="Filtrar por tipo"
+    Icon="filter.png"
+    ContentTemplate="{DataTemplate views:FilterByTypePage}"
+    Route="filterByType" />
+
+    <ShellContent
+    Title="Buscar por autor"
+    Icon="search_author.png"
+    ContentTemplate="{DataTemplate views:SearchByAuthorPage}"
+    Route="searchByAuthor" />
+
+    <ShellContent
+    Title="Cambiar estado"
+    Icon="status_change.png"
+    ContentTemplate="{DataTemplate views:ChangeStatusPage}"
+    Route="changeStatus" />
+
+    <ShellContent
+    Title="Eliminar publicación"
+    Icon="delete.png"
+    ContentTemplate="{DataTemplate views:DeletePublicationPage}"
+    Route="deletePublication" />
+
+
+
+</Shell>

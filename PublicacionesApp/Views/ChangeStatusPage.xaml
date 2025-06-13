@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PublicacionesApp.Views.ChangeStatusPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Style="{StaticResource ContentPageStyle}"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Busca por Id o Título" Style="{StaticResource LabelStyle}" />
+            <Entry
+        Text="{Binding SearchQuery}"
+        Placeholder="PUB001 o parte del título"
+        Style="{StaticResource EntryStyle}" />
+
+            <Button
+        Text="Buscar"
+        Command="{Binding SearchCommand}"
+        Style="{StaticResource ButtonStyle}"
+        IsEnabled="{Binding SearchQuery, Converter={StaticResource StringNotNullOrEmptyConverter}}" />
+
+            <VerticalStackLayout
+        IsVisible="{Binding FoundPublication, Converter={StaticResource NotNullToBoolConverter}}"
+        Spacing="10">
+
+                <Label Text="Publicación encontrada:" Style="{StaticResource LabelStyle}" FontAttributes="Bold" />
+
+                <Label Text="{Binding FoundPublication.Title}" Style="{StaticResource LabelStyle}" />
+                <Label Text="{Binding FoundPublication.Date, StringFormat='{0:d}'}"
+               Style="{StaticResource LabelStyle}"
+               FontSize="12" />
+
+                <Label Text="Nuevo estado:" Style="{StaticResource LabelStyle}" FontAttributes="Bold" />
+                <Picker
+          ItemsSource="{Binding Statuses}"
+          SelectedItem="{Binding NewStatus}"
+          Style="{StaticResource PickerStyle}" />
+
+                <Button
+          Text="Actualizar estado"
+          Command="{Binding ChangeStatusCommand}"
+          Style="{StaticResource ButtonStyle}"
+          IsEnabled="{Binding FoundPublication, Converter={StaticResource NotNullToBoolConverter}}" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

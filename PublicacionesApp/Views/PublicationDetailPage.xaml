@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PublicacionesApp.Views.PublicationDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Style="{StaticResource ContentPageStyle}"
+    Title="{Binding PublicationTitle}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Fecha:" Style="{StaticResource LabelStyle}" FontAttributes="Bold" />
+            <Label Text="{Binding PublicationDate}" Style="{StaticResource LabelStyle}" />
+
+            <Label Text="Tipo:" Style="{StaticResource LabelStyle}" FontAttributes="Bold" />
+            <Label Text="{Binding PublicationType}" Style="{StaticResource LabelStyle}" />
+
+            <Label Text="Estado:" Style="{StaticResource LabelStyle}" FontAttributes="Bold" />
+            <Label Text="{Binding PublicationStatus}" Style="{StaticResource LabelStyle}" />
+
+            <Label Text="Autores:" Style="{StaticResource LabelStyle}" FontAttributes="Bold" />
+            <CollectionView
+          ItemsSource="{Binding Authors}"
+          SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}" Style="{StaticResource LabelStyle}" Margin="5,0" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

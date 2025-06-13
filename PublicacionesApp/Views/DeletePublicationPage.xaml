@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PublicacionesApp.Views.DeletePublicationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Style="{StaticResource ContentPageStyle}"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Título a eliminar" Style="{StaticResource LabelStyle}" />
+            <Entry
+        Text="{Binding TitleQuery}"
+        Placeholder="Escribe el título"
+        Style="{StaticResource EntryStyle}" />
+
+            <Button
+        Text="Buscar"
+        Command="{Binding SearchCommand}"
+        Style="{StaticResource ButtonStyle}"
+        IsEnabled="{Binding TitleQuery, Converter={StaticResource StringNotNullOrEmptyConverter}}" />
+
+            <VerticalStackLayout
+        IsVisible="{Binding FoundPublication, Converter={StaticResource NotNullToBoolConverter}}"
+        Spacing="10">
+
+                <Label Text="Publicación encontrada:" Style="{StaticResource LabelStyle}" FontAttributes="Bold" />
+                <Label Text="{Binding FoundPublication.Title}" Style="{StaticResource LabelStyle}" />
+                <Label Text="{Binding FoundPublication.Date, StringFormat='{0:d}'}"
+               Style="{StaticResource LabelStyle}"
+               FontSize="12" />
+
+                <Button
+          Text="Eliminar"
+          Command="{Binding DeleteCommand}"
+          Style="{StaticResource ButtonStyle}" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

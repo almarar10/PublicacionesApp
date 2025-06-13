@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PublicacionesApp.Views.PublicationsListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Style="{StaticResource ContentPageStyle}"
+    Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refrescar" Command="{Binding RefreshCommand}" />
+    </ContentPage.ToolbarItems>
+    <CollectionView
+      x:Name="pubsCollection"
+      ItemsSource="{Binding Publicaciones}"
+      SelectionMode="Single"
+      Margin="10">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Style="{StaticResource FrameStyle}">
+                    <StackLayout>
+                        <Label Text="{Binding Title}" Style="{StaticResource LabelStyle}" FontAttributes="Bold" FontSize="16" />
+                        <Label Text="{Binding Type}" Style="{StaticResource LabelStyle}" />
+                        <Label Text="{Binding Status}" Style="{StaticResource LabelStyle}" TextColor="Gray" FontSize="12" />
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

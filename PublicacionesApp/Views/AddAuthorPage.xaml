@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PublicacionesApp.Views.AddAuthorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Style="{StaticResource ContentPageStyle}"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Selecciona publicación" Style="{StaticResource LabelStyle}" />
+
+            <Frame Style="{StaticResource EntryFrameStyle}">
+                <Picker
+          ItemsSource="{Binding Publications}"
+          ItemDisplayBinding="{Binding Title}"
+          SelectedItem="{Binding SelectedPublication}"
+          Title="Elige una publicación"
+          Style="{StaticResource PickerStyle}" />
+            </Frame>
+
+            <Label Text="Nombre del nuevo autor" Style="{StaticResource LabelStyle}" />
+            <Frame Style="{StaticResource EntryFrameStyle}">
+                <Entry
+          Text="{Binding NewAuthor}"
+          Placeholder="Autor completo"
+          Style="{StaticResource EntryStyle}" />
+            </Frame>
+
+            <Button
+        Text="Añadir autor"
+        Command="{Binding AddAuthorCommand}"
+        Style="{StaticResource ButtonStyle}"
+        IsEnabled="{Binding NewAuthor, Converter={StaticResource StringNotNullOrEmptyConverter}}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

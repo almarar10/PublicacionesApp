@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PublicacionesApp.Views.AddPublicationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Style="{StaticResource ContentPageStyle}"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Id" Style="{StaticResource LabelStyle}" />
+            <Entry Text="{Binding Id}" Placeholder="PUBXXX" Style="{StaticResource EntryStyle}" />
+
+            <Label Text="Título" Style="{StaticResource LabelStyle}" />
+            <Entry Text="{Binding Title}" Placeholder="Título de la publicación" Style="{StaticResource EntryStyle}" />
+
+            <Label Text="Fecha" Style="{StaticResource LabelStyle}" />
+            <DatePicker Date="{Binding Date}" Style="{StaticResource DatePickerStyle}" />
+
+            <Label Text="Tipo" Style="{StaticResource LabelStyle}" />
+            <Picker ItemsSource="{Binding Types}"
+              SelectedItem="{Binding SelectedType}"
+              Style="{StaticResource PickerStyle}" />
+
+            <Label Text="Estado" Style="{StaticResource LabelStyle}" />
+            <Picker ItemsSource="{Binding Statuses}"
+              SelectedItem="{Binding SelectedStatus}"
+              Style="{StaticResource PickerStyle}" />
+
+            <Label Text="Autores (separados por comas)" Style="{StaticResource LabelStyle}" />
+            <Entry Text="{Binding AuthorsText}"
+             Placeholder="Autor1, Autor2..."
+             Style="{StaticResource EntryStyle}" />
+
+            <Button Text="Guardar"
+              Command="{Binding SaveCommand}"
+              Style="{StaticResource ButtonStyle}"
+              IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

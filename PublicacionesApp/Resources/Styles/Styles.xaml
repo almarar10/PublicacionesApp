@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Paleta de colores -->
+    <Color x:Key="MetallicOrangeColor">#FF8C00</Color>
+    <Color x:Key="BackgroundColor">#1E1E1E</Color>
+    <Color x:Key="TextColor">#FFFFFF</Color>
+    <Color x:Key="PlaceholderColor">#B0B0B0</Color>
+
+    <!-- 1. Estilo de página: sólo BackgroundColor -->
+    <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+        <!-- <Setter Property="FontFamily" ... /> eliminado aquí -->
+    </Style>
+
+    <!-- 2. Etiquetas -->
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource MetallicOrangeColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Orbitron" />
+    </Style>
+
+    <!-- 3. Entry -->
+    <Style x:Key="EntryStyle" TargetType="Entry">
+        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderColor}" />
+        <Setter Property="BackgroundColor" Value="#2E2E2E" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="FontFamily" Value="Orbitron" />
+    </Style>
+
+    <!-- 4. Frame contenedor de Entry -->
+    <Style x:Key="EntryFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#2E2E2E" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Margin" Value="0,5" />
+        <!-- no FontFamily aquí -->
+    </Style>
+
+    <!-- 5. Botones -->
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource MetallicOrangeColor}" />
+        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HeightRequest" Value="45" />
+        <Setter Property="Margin" Value="0,10" />
+        <Setter Property="FontFamily" Value="Orbitron" />
+    </Style>
+
+    <!-- 6. Marcos genéricos -->
+    <Style x:Key="FrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#2E2E2E" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HasShadow" Value="True" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Margin" Value="0,5" />
+        <!-- no FontFamily aquí -->
+    </Style>
+
+    <!-- 7. Picker -->
+    <Style x:Key="PickerStyle" TargetType="Picker">
+        <Setter Property="BackgroundColor" Value="#2E2E2E" />
+        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        <Setter Property="TitleColor" Value="{StaticResource PlaceholderColor}" />
+        <Setter Property="Margin" Value="0,5" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="FontFamily" Value="Orbitron" />
+    </Style>
+
+    <!-- 8. DatePicker -->
+    <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+        <Setter Property="Margin" Value="0,5" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="FontFamily" Value="Orbitron" />
+    </Style>
+
+</ResourceDictionary>
