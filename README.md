@@ -1,6 +1,4 @@
-Here’s the complete **README.md** in plain Markdown—no rendering errors—ready to copy into your repository:
-
-```markdown
+````markdown
 # 🚀 PublicacionesApp
 
 ![.NET MAUI 8.0](https://img.shields.io/badge/.NET_MAUI-8.0-blue?style=flat-square) ![C#](https://img.shields.io/badge/C%23-9B4F96?style=flat-square) ![MIT License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
@@ -38,26 +36,22 @@ Provide a fully functional **CRUD** app for academic publications, demonstrating
 
 ## 🧩 Architecture
 
-```
-
+```text
 Views (XAML + code-behind)
-↓ binds to
+    ↓ binds to
 ViewModels (BaseViewModel → specific logic)
-↓ calls
+    ↓ calls
 IPublicationService → PublicationService (singleton)
-↓ manipulates
+    ↓ manipulates
 In-Memory Data Store
-
-```
+````
 
 ---
 
 ## 📂 Project Structure
 
-```
-
+```text
 /PublicacionesApp
-│
 ├── App.xaml                     # Global resources & converters
 ├── MauiProgram.cs               # App startup, fonts & DI registrations
 │
@@ -90,20 +84,19 @@ In-Memory Data Store
 │   └── DeletePublicationPage.xaml
 │
 └── Resources/
-├── Styles/Styles.xaml        # Color palette & styles
-├── Converters/               # IValueConverters
-└── Fonts/Orbitron-Regular.ttf
-
-````
+    ├── Styles/Styles.xaml        # Color palette & styles
+    ├── Converters/               # IValueConverters
+    └── Fonts/Orbitron-Regular.ttf
+```
 
 ---
 
 ## ⚙️ Prerequisites
 
-- **Windows 11 / macOS / Linux**  
-- **.NET 8.0 SDK**  
-- **Visual Studio 2022 Community** v17.14.5 with **.NET MAUI** workload  
-- (Optional) Android Emulator or physical device  
+* **Windows 11 / macOS / Linux**
+* **.NET 8.0 SDK**
+* **Visual Studio 2022 Community** v17.14.5 with **.NET MAUI** workload
+* (Optional) Android Emulator or physical device
 
 ---
 
@@ -113,13 +106,13 @@ In-Memory Data Store
 # 1. Clone the repo
 git clone https://github.com/almarar10/PublicacionesApp.git
 
-# 2. Enter folder
+# 2. Navigate into project
 cd PublicacionesApp
 
 # 3. Open in Visual Studio 2022
 #    - Select "Windows Machine" or an Android emulator
 #    - Press F5 to build and run
-````
+```
 
 ---
 
@@ -133,39 +126,39 @@ cd PublicacionesApp
 2. **Create Publication**
 
    * Fill ID, Title, Date, Type, Status, Authors.
-   * Tap **Save** → new item appears in list.
+   * Press **Save** → new item appears in list.
 
 3. **Replace Author**
 
-   * Pick a publication, enter new author name.
-   * Tap **Replace** → old authors cleared, new author set.
+   * Select publication, enter new author name.
+   * Press **Replace** → old authors cleared, new author set.
 
 4. **Filter by Type**
 
-   * Choose a type, tap **Filter** → list filtered.
+   * Choose a type, press **Filter** → list filtered.
 
 5. **Search by Author**
 
-   * Enter author name, tap **Search** → show matching items.
+   * Enter author name, press **Search** → matching items.
 
 6. **Change Status**
 
-   * Search by ID or Title, pick new status, tap **Update**.
+   * Search by ID or Title, pick new status, press **Update**.
 
 7. **Delete Publication**
 
-   * Search by Title, tap **Delete**, confirm → item removed.
+   * Search by Title, press **Delete**, confirm → item removed.
 
 ---
 
 ## 🛠️ Customization & Styling
 
-* **Fonts**: `Orbitron` for a metallic-orange look
+* **Fonts**: `Orbitron` for a distinctive metallic orange look
 * **Colors**:
 
   * Background: `#1E1E1E`
   * Accent: `#FF8C00`
-* **Styles**: in `Resources/Styles/Styles.xaml`
+* **Styles**: centralized in `Resources/Styles/Styles.xaml`
 * **Converters**: in `Resources/Converters`
 
 ---
@@ -199,7 +192,7 @@ See [LICENSE](LICENSE) for full text.
 **almarar10**
 
 * GitHub: [@almarar10](https://github.com/almarar10)
-* Email: [your.email@example.com](mailto:your.email@example.com)
+* Email: [aramoscurto@gmail.com](mailto:your.email@example.com)
 
 ---
 
