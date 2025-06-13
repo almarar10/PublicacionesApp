@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PublicacionesApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+d94cbb6d170d6c7c21a17bda0d7991d0a70b9736")]
 [assembly: System.Reflection.AssemblyProductAttribute("PublicacionesApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PublicacionesApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
